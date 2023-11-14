@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Line Graph Example</title>
+
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <div class="mainpage">
+        <div class="newsImage">
+            <img src="Images/banner.png" alt="logo">
+            <div class="banner-heading">Msi Chess Club</div>
+        </div>
+
+        <!-- Start of overall stats -->
+        <div class="overallStats">
+            <h2 class="stats-heading">Avg Stats</h2>
+            <hr>
+            <!-- Stats value -->
+            <div class="statsdata">
+                <!-- Rapid -->
+                <div class="stats">
+                    <div class="aabbcc">
+                        <img src="Icons/chronometer.png" alt="clock" class="icons">
+                        <span>Rapid</span>
+                    </div>
+                    <span id="rapid">1200</span>
+                </div>
+                <!-- End of Rapid -->
+                <hr>
+                <!-- Blitz -->
+                <div class="stats">
+                    <div class="aabbcc">
+                        <img src="Icons/light.png" alt="light" class="icons">
+                        <span>Blitz</span>
+                    </div>
+                    <span id="blitz">1200</span>
+                </div>
+                <!-- End of blitz -->
+                <hr>
+                <!-- Bullet -->
+                <div class="stats">
+                    <div class="aabbcc">
+                        <img src="Icons/bullet.png" alt="bullet" class="icons">
+                        <span>Bullet</span>
+                    </div>
+                    <span id="bullet">1200</span>
+                </div>
+                <!-- End of bullet -->
+                <hr>
+                <!-- Puzzle -->
+                <div class="stats">
+                    <div class="aabbcc">
+                        <img src="Icons/puzzle.png" alt="puzzle" class="icons">
+                        <span>Puzzle</span>
+                    </div>
+                    <span id="puzzle">1200</span>
+                </div>
+                <!-- End of Puzzle -->
+                <hr>
+                <!-- Total -->
+                <div class="stats total-player">
+                    <div class="aabbcc">
+                        <img src="Icons/pawn.png" alt="pawn" class="icons">
+                        <span>Total players</span>
+                    </div>
+                    <span id="total">42</span>
+                </div>
+                <!-- End of total -->
+            </div>
+            <!-- Stats value -->
+        </div>
+        <!-- End of overall stats -->
+
+        <!-- Start of graph buttons -->
+        <div class="graphButtons">
+            <label class="custom-radio">
+                <input type="radio" name="graph-option" id="rapidGraph" checked="true">
+                <label for="rapidGraph">Rapid</label>
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="graph-option" id="blitzGraph">
+                <label for="blitzGraph">Blitz</label>
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="graph-option" id="bulletGraph">
+                <label for="bulletGraph">Bullet</label>
+            </label>
+            <input type="text" placeholder="username" id="usernameInput" onkeydown="checkEnter(event)">
+        </div>
+        
+        <!-- End of graph buttons -->
+
+        <!-- Start of graph -->
+        <div class="bargraph">
+            <!-- Rapid graph -->
+            <div class="char">
+                <canvas id="chartRapid" class="ratingGraph"></canvas>
+            </div>
+            <!-- Rapid grpah -->
+
+            <!-- Blitz graph -->
+            <div class="char">
+                <canvas id="chartBlitz" class="ratingGraph"></canvas>
+            </div>
+            <!-- Blitz graph -->
+
+            <!-- Bullet graph -->
+            <div class="char">
+                <canvas id="chartBullet" class="ratingGraph"></canvas>
+            </div>
+            <!-- Bullet graph -->
+        </div>
+        <!-- End of graph -->
+
+        <!-- Start of table container -->
+        <div class="table-container">
+            <!-- Table heading -->
+            <div class="thead-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th style="padding-left:20px; padding-right: 20px;">UserName</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <!-- End of table heading -->
+
+            <!-- Table content -->
+            <table id="tableRapid" class="ratingTable">
+                <tbody>
+                    <!-- Table content will be added dynamically from JavaScript -->
+                </tbody>
+            </table>
+            <table id="tableBlitz" class="ratingTable">
+                <tbody>
+                    <!-- Table content will be added dynamically from JavaScript -->
+                </tbody>
+            </table>
+            <table id="tableBullet" class="ratingTable">
+                <tbody>
+                    <!-- Table content will be added dynamically from JavaScript -->
+                </tbody>
+            </table>
+            <!-- Table content -->
+        </div>
+        <!-- End of table container -->
+
+    </div>
+    <!-- End of main page -->
+
+    <script src="script.js"></script>
+</body>
+</html>
